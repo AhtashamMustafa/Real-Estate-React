@@ -1,0 +1,163 @@
+@import "../../responsive.scss";
+
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .home,
+  .about,
+  .contacts,
+  .agents,
+  .login,
+  .register {
+    transition: all 0.4s ease;
+
+    @include sm {
+      display: none;
+    }
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      img {
+        width: 20px;
+      }
+
+      span {
+        @include md {
+          display: none;
+        }
+
+        @include sm {
+          display: initial;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    @include md {
+      background-color: transparent;
+    }
+
+    .login,
+    .register {
+      padding: 12px 24px;
+      margin: 20px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      gap: 20px;
+      margin-right: 20px;
+
+      span{
+      @include sm{
+        display: none;
+      }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .profile{
+      padding: 12px 24px;
+      border: none;
+      background-color: #fece51;
+      cursor: pointer;
+      position: relative;
+      @include sm{
+        display: none;
+      }
+
+      .notification{
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      border-radius: 50%;
+      color: white;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }}
+    }
+    .register {
+      background-color: #fece51;
+    }
+
+    .menuIcon {
+      display: none;
+      z-index: 999;
+
+      img {
+        width: 20px;
+        cursor: pointer;
+      }
+      @include sm {
+        display: inline;
+        z-index: 1;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 18px;
+
+      &.active {
+        right: 0;
+      }
+
+      @include sm {
+        .home,
+        .about,
+        .contacts,
+        .agents,
+        .login,
+        .register {
+          display: initial;
+        }
+      }
+    }
+  }
+}
