@@ -1,4 +1,67 @@
 .profilePage{
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-width: none;
+    display: flex;
+    height: 100vh;
+
+    .details{
+        flex:3;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        padding-bottom: 40px;
+
+        .wrapper{
+            padding-right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .title{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                h1{
+                    font-weight: 600;
+                }
+            
+                button{
+                    padding: 12px 24px;
+                    background-color: #fece51;
+                    cursor: pointer;
+                    border: none;
+                    font-family: 'Lato',sans-serif;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+
+            .info{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                }
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .chatContainer{
+        flex: 2;
+        background-color: #fcf5f3;
+        height: 100%;
+
+        .wrapper{
+            padding: 0px 20px;
+        }
+    }
 }
