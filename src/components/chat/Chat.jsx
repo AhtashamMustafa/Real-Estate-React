@@ -1,20 +1,83 @@
-import './chat.scss'
+import { useState } from "react";
+import "./chat.scss";
 
 function Chat() {
+    const [chat, setChat] = useState(true);
   return (
-    <div className='chat'>
+    <div className="chat">
       <div className="messages">
         <h1>Message</h1>
         <div className="message">
-            <img src="" alt="" />
-            <span>John Doe</span>
+          <img src="/dp.jpg" alt="" />
+          <span>John Doe</span>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div className="message">
+          <img src="/dp.jpg" alt="" />
+          <span>John Doe</span>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div className="message">
+          <img src="/dp.jpg" alt="" />
+          <span>John Doe</span>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div className="message">
+          <img src="/dp.jpg" alt="" />
+          <span>John Doe</span>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div className="message">
+          <img src="/dp.jpg" alt="" />
+          <span>John Doe</span>
+          <p>Lorem ipsum dolor sit amet...</p>
         </div>
       </div>
-      <div className="chatBox">
-        
-      </div>
+      {chat && <div className="chatBox">
+        <div className="top">
+          <div className="user">
+            <img src="/dp.jpg" alt="" />
+            John Doe
+          </div>
+          <span className="close" onClick={() => setChat(false)}>X</span>
+        </div>
+        <div className="center">
+            <div className="chatMessage">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage own">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage own">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage own">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+            <div className="chatMessage">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>1 hour ago</span>
+            </div>
+        </div>
+        <div className="bottom">
+            <textarea className="input"></textarea>
+            <button>Send</button>
+        </div>
+      </div>}
     </div>
-  )
+  );
 }
 
-export default Chat
+export default Chat;
