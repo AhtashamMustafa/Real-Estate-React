@@ -36,7 +36,8 @@ nav {
       align-items: center;
 
       img {
-        width: 20px;
+        width: 25px;
+        border-radius: 0px !important;
       }
 
       span {
@@ -68,6 +69,9 @@ nav {
       margin: 20px;
     }
 
+    .login-signup{
+display: flex;
+    }
     .user {
       display: flex;
       align-items: center;
