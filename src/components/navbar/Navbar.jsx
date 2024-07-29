@@ -32,13 +32,13 @@ function Navbar() {
           <div className="user">
             <Link to={"/profile"}>
               <img
-                src={currentUser?.userInfo.avatar||currentUser?.avatar?`${currentUser.userInfo.avatar}`||`${currentUser.avatar}`:"/noavatar.jpg"}
+                src={currentUser.avatar?`${currentUser.avatar}`:"/noavatar.jpg"}
                 alt=""
               />
             </Link>
 
             <Link to={"/profile"}>
-              <span>{currentUser?.userInfo.username||currentUser?.username}</span>
+              <span>{currentUser?.username}</span>
             </Link>
 
             <div className="profile">
