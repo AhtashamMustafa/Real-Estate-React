@@ -9,6 +9,7 @@ import Card from "../../components/card/Card.jsx";
 
 function profilePage() {
   const data = useLoaderData();
+  
   const { updateUser, currentUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -86,7 +87,15 @@ function profilePage() {
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Chat />
+        <Suspense fallback={<p>Loading...</p>}>
+            <Await
+              resolve={data.chatResponse}
+              errorElement={<p>Error loading chats!</p>}
+            >
+              {(chatResponse) => <Chat chats={chatResponse.data} />}
+            </Await>
+          </Suspense>
+          
         </div>
       </div>
     </div>

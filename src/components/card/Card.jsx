@@ -1,7 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./card.scss";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import apiRequest from "../../lib/apiRequest";
 
 function Card({ item }) {
+  const post = item;
+  const [saved, setSaved] = useState(post.isSaved);//
+  const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  console.log(post)
+
+  // const handleSave = async () => {
+  //   if (!currentUser) {
+  //     navigate("/login");
+  //   }
+  //   // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
+  //   setSaved((prev) => !prev);
+  //   try {
+  //     await apiRequest.post("/users/save", { postId: post.id });
+  //   } catch (err) {
+  //     console.log(err);
+  //     setSaved((prev) => !prev);
+  //   }
+  // };
   return (
     <div className="card">
       <Link to={`/${item.id}`} className="imageContainer">
@@ -28,9 +50,16 @@ function Card({ item }) {
             </div>
           </div>
           <div className="icons">
-            <div className="icon">
+          <button
+              // onClick={handleSave}
+              style={{
+                backgroundColor: saved ? "#fece51" : "white",
+              }}
+              className="icon"
+            >
               <img src="/save.png" alt="" />
-            </div>
+              {/* {saved ? "Place Saved" : "Save the Place"} */}
+            </button>
             <div className="icon">
               <img src="/chat.png" alt="" />
             </div>

@@ -9,6 +9,7 @@ import Register from "./routes/register/register.jsx";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage.jsx";
 import NewPostPage from "./routes/newPostPage/newPostPage.jsx";
 import { singlePageLoader, listPageLoader, profilePageLoader } from "./lib/loaders.js";
+import AboutPage from "./routes/aboutPage/aboutPage.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
         },
       ],
     },
